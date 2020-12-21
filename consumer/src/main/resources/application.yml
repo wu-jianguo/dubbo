@@ -1,0 +1,33 @@
+server:
+  port: 8887
+spring:
+  dubbo:
+    application:
+      name: consumer #应用名
+    registry:
+      address: 127.0.0.1:2181
+      protocol: zookeeper
+    protocol:
+        name: dubbo
+        port: 20880 #dubbo服务暴露的端口
+  datasource:
+    url: jdbc:mysql://117.114.146.38:13306/jpgk_device_kangshifu
+    username: visitor
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+logging:
+  level:
+    com.xiaolao.consumer.dao: debug
+seata:
+  enabled: true
+  application-id: order-service
+  tx-service-group: my-test-tx-group
+  service:
+    vgroup-mapping:
+      my-test-tx-group: default
+    grouplist:
+      default: 127.0.0.1:8091
+  registry:
+    type: zk
+    zk:
+      server-addr: 127.0.0.1:2181
