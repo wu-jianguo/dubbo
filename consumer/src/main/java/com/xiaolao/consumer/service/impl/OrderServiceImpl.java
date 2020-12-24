@@ -29,8 +29,7 @@ public class OrderServiceImpl implements IOrderService {
         order.setAmount(2);
         order.setCommodityCode("123456789");
         orderDao.insert(order);
-
         storageService.reduceStock();
-
+        System.out.println(1/0);
     }
 }

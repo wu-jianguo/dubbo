@@ -22,6 +22,5 @@ public class StorageServiceImpl implements IStorageService {
         storage.setName("xl");
         storage.setCommodityCode("2662");
         storageDao.insert(storage);
-        System.out.println(1/0);
     }
 }
